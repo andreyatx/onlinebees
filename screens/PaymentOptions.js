@@ -13,6 +13,8 @@ const DUMMY_OPTIONS = [
     id: 2,
     price: 35,
     text: 'Premium status "regular user"',
+    isDiscount: true,
+    discount: 25,
     prevPrice: 60,
   },
   {
@@ -46,6 +48,8 @@ export const PaymentOptions = ({ navigation }) => {
               price={item.price}
               text={item.text}
               prevPrice={item.prevPrice}
+              isDiscount={item.isDiscount}
+              discount={item.discount}
               onPress={pressHandler}
             />
           )}

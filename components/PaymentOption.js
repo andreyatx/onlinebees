@@ -2,7 +2,14 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
 import { Variables } from '../constants/styles';
 
-export const PaymentOption = ({ price, text, prevPrice, onPress }) => {
+export const PaymentOption = ({
+  price,
+  text,
+  prevPrice,
+  onPress,
+  isDiscount,
+  discount,
+}) => {
   return (
     <View style={styles.container}>
       <TouchableHighlight
@@ -10,7 +17,13 @@ export const PaymentOption = ({ price, text, prevPrice, onPress }) => {
         style={styles.hl}
         onPress={onPress}
       >
-        <View style={styles.option}>
+        <View style={isDiscount ? styles.discount : styles.option}>
+          {isDiscount ? (
+            <View style={styles.procent}>
+              <Text style={styles.procentValue}>{discount}%</Text>
+            </View>
+          ) : null}
+
           {prevPrice ? (
             <Text style={styles.prevPrice}>${prevPrice}/in month</Text>
           ) : null}
@@ -57,5 +70,33 @@ const styles = StyleSheet.create({
   },
   hl: {
     borderRadius: 20,
+  },
+  discount: {
+    borderRadius: 20,
+    borderStyle: 'solid',
+    borderWidth: 2,
+    borderColor: Variables.colors.purple,
+    textAlign: 'center',
+    minHeight: 116,
+    minWidth: 270,
+    maxWidth: 340,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 16,
+    paddingBottom: 16,
+  },
+  procent: {
+    position: 'absolute',
+    top: 0,
+    alignSelf: 'flex-end',
+    backgroundColor: Variables.colors.purple,
+    borderBottomLeftRadius: 50,
+    borderTopRightRadius: 30,
+    minWidth: 50,
+    alignItems: 'center',
+  },
+  procentValue: {
+    color: 'white',
+    fontFamily: 'Poppins_400Regular',
   },
 });
