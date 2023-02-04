@@ -90,6 +90,9 @@ const styles = StyleSheet.create({
     borderColor: '#D9DBE9',
     marginBottom: 24,
   },
+  benefits: {
+    flex: 1,
+  },
   pricingText: {
     fontSize: 20,
     fontFamily: 'Poppins_600SemiBold',
