@@ -79,7 +79,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     maxHeight: 72,
     marginBottom: 26,
-    fontFamily: 'Poppins',
   },
   profileAvatar: {
     width: 72,
