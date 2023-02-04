@@ -58,7 +58,9 @@ export const Profile = ({ navigation }) => {
         <View style={styles.paymentOptionsLink}>
           <View style={styles.text}>
             <Text style={styles.paymentOptionsLinkHeader}>Payment options</Text>
-            <Text>Find out current, choose a new</Text>
+            <Text style={{ fontFamily: 'Poppins_400Regular' }}>
+              Find out current, choose a new
+            </Text>
           </View>
           <Ionicons
             style={{ alignSelf: 'center' }}
@@ -77,6 +79,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     maxHeight: 72,
     marginBottom: 26,
+    fontFamily: 'Poppins',
   },
   profileAvatar: {
     width: 72,
@@ -88,16 +91,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   userName: {
-    fontWeight: 'bold',
+    fontFamily: 'Poppins_700Bold',
     fontSize: 16,
   },
-
+  userReviews: {
+    fontFamily: 'Poppins_400Regular',
+  },
+  userVerification: {
+    fontFamily: 'Poppins_400Regular',
+  },
   userLevel: {
     width: 78,
     color: Variables.colors.green,
     backgroundColor: Variables.colors.background.green,
     textAlign: 'center',
     borderRadius: 8,
+    fontFamily: 'Poppins_400Regular',
   },
   paymentOptionsLink: {
     flexDirection: 'row',
@@ -105,6 +114,6 @@ const styles = StyleSheet.create({
   },
   paymentOptionsLinkHeader: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontFamily: 'Poppins_700Bold',
   },
 });

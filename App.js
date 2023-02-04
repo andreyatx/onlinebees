@@ -10,6 +10,12 @@ import { Task } from './screens/Task';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Variables } from './constants/styles';
 import { TariffPage } from './screens/TariffPage';
+import {
+  useFonts,
+  Poppins_400Regular,
+  Poppins_600SemiBold,
+  Poppins_700Bold,
+} from '@expo-google-fonts/poppins';
 
 const BottomTabs = () => {
   const Tab = createBottomTabNavigator();
@@ -70,6 +76,15 @@ const BottomTabs = () => {
 
 export default function App() {
   const Stack = createNativeStackNavigator();
+  let [fontsLoaded] = useFonts({
+    Poppins_400Regular,
+    Poppins_600SemiBold,
+    Poppins_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return (
     <NavigationContainer>
@@ -83,7 +98,13 @@ export default function App() {
           }}
         />
         <Stack.Screen name='Payment Options' component={PaymentOptions} />
-        <Stack.Screen name='Tariff' component={TariffPage} />
+        <Stack.Screen
+          name='Tariff'
+          component={TariffPage}
+          options={{
+            title: 'Payment Options',
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

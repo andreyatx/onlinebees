@@ -58,13 +58,13 @@ export const PaymentOptions = ({ navigation }) => {
 const styles = StyleSheet.create({
   heading: {
     fontSize: 32,
-    fontWeight: 'bold',
+    fontFamily: 'Poppins_700Bold',
     marginBottom: 16,
   },
   description: {
     fontSize: 16,
     lineHeight: 24,
-    fontWeight: '400',
+    fontFamily: 'Poppins_400Regular',
   },
   paymentOptions: {
     marginTop: 16,

@@ -45,13 +45,14 @@ const styles = StyleSheet.create({
   price: {
     color: Variables.colors.font.primary,
     fontSize: 20,
-    fontWeight: 'bold',
+    fontFamily: 'Poppins_600SemiBold',
     lineHeight: 26,
     marginBottom: 8,
   },
   text: {
     fontSize: 16,
     color: Variables.colors.font.secondary,
+    fontFamily: 'Poppins_400Regular',
     textAlign: 'center',
   },
   hl: {
