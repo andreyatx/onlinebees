@@ -8,8 +8,8 @@ import { Work } from './screens/Work';
 import { Chat } from './screens/Chat';
 import { Task } from './screens/Task';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { GlobalStyles } from './constants/styles';
-import { View } from 'react-native';
+import { Variables } from './constants/styles';
+import { TariffPage } from './screens/TariffPage';
 
 const BottomTabs = () => {
   const Tab = createBottomTabNavigator();
@@ -19,13 +19,13 @@ const BottomTabs = () => {
       initialRouteName='Profile'
       screenOptions={{
         headerStyle: {
-          backgroundColor: GlobalStyles.colors.background.primary,
+          backgroundColor: Variables.colors.background.primary,
         },
-        headerTintColor: GlobalStyles.colors.font.primary,
+        headerTintColor: Variables.colors.font.primary,
         tabBarStyle: {
-          backgroundColor: GlobalStyles.colors.background.primary,
+          backgroundColor: Variables.colors.background.primary,
         },
-        tabBarActiveTintColor: GlobalStyles.colors.purple,
+        tabBarActiveTintColor: Variables.colors.purple,
       }}
     >
       <Tab.Screen
@@ -82,7 +82,8 @@ export default function App() {
             headerShown: false,
           }}
         />
-        <Stack.Screen name='PaymentOptions' component={PaymentOptions} />
+        <Stack.Screen name='Payment Options' component={PaymentOptions} />
+        <Stack.Screen name='Tariff' component={TariffPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

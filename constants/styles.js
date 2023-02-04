@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-export const GlobalStyles = {
+export const Variables = {
   colors: {
     background: {
       primary: '#EFF0F7',
@@ -23,7 +23,7 @@ export const globalStyles = StyleSheet.create({
   container: {
     paddingTop: 24,
     paddingHorizontal: 16,
-    backgroundColor: GlobalStyles.colors.background.secondary,
+    backgroundColor: Variables.colors.background.secondary,
     flex: 1,
   },
 });

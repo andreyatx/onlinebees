@@ -1,17 +1,16 @@
 import {
-  Pressable,
   StyleSheet,
   Text,
   View,
   Image,
   TouchableHighlight,
 } from 'react-native';
-import { GlobalStyles, globalStyles } from '../constants/styles';
+import { Variables, globalStyles } from '../constants/styles';
 import { Ionicons } from '@expo/vector-icons';
 
 export const Profile = ({ navigation }) => {
   const pressHandler = () => {
-    navigation.navigate('PaymentOptions');
+    navigation.navigate('Payment Options');
   };
 
   return (
@@ -31,7 +30,7 @@ export const Profile = ({ navigation }) => {
               <Ionicons
                 style={styles.profileIcon}
                 name='star'
-                color={GlobalStyles.colors.yellow}
+                color={Variables.colors.yellow}
               />
               0 0 review
             </Text>
@@ -40,7 +39,7 @@ export const Profile = ({ navigation }) => {
               <Ionicons
                 style={styles.profileIcon}
                 name='shield-checkmark-outline'
-                color={GlobalStyles.colors.green}
+                color={Variables.colors.green}
               />
               Account verified
             </Text>
@@ -53,7 +52,7 @@ export const Profile = ({ navigation }) => {
       </View>
 
       <TouchableHighlight
-        underlayColor={GlobalStyles.colors.background.primary}
+        underlayColor={Variables.colors.background.primary}
         onPress={pressHandler}
       >
         <View style={styles.paymentOptionsLink}>
@@ -95,8 +94,8 @@ const styles = StyleSheet.create({
 
   userLevel: {
     width: 78,
-    color: GlobalStyles.colors.green,
-    backgroundColor: GlobalStyles.colors.background.green,
+    color: Variables.colors.green,
+    backgroundColor: Variables.colors.background.green,
     textAlign: 'center',
     borderRadius: 8,
   },
