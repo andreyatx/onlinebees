@@ -33,7 +33,10 @@ const DUMMY_BENEFITS = [
   },
 ];
 
-export const TariffPage = () => {
+export const TariffPage = ({ navigation }) => {
+  const handlePress = () => {
+    navigation.navigate('Profile');
+  };
   return (
     <View style={globalStyles.container}>
       <View style={styles.heading}>
@@ -61,7 +64,7 @@ export const TariffPage = () => {
         colors={['#7433FF', '#FFA3FD']}
         start={{ x: 0, y: 0 }}
       >
-        <Pressable>
+        <Pressable onPress={handlePress}>
           <Text style={styles.button}>Change payment options</Text>
         </Pressable>
       </LinearGradient>
