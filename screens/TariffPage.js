@@ -1,5 +1,13 @@
 import React from 'react';
-import { View, Text, Pressable, StyleSheet, FlatList } from 'react-native';
+import {
+  View,
+  Text,
+  Pressable,
+  StyleSheet,
+  FlatList,
+  TouchableHighlight,
+  TouchableOpacity,
+} from 'react-native';
 import { globalStyles, Variables } from './../constants/styles';
 import { Ionicons } from '@expo/vector-icons';
 import { BenefitItem } from '../components/BenefitItem';
@@ -59,15 +67,15 @@ export const TariffPage = ({ navigation }) => {
           )}
         />
       </View>
-      <LinearGradient
-        style={styles.buttonContainer}
-        colors={['#7433FF', '#FFA3FD']}
-        start={{ x: 0, y: 0 }}
-      >
-        <Pressable onPress={handlePress}>
+      <TouchableOpacity onPress={handlePress}>
+        <LinearGradient
+          style={styles.buttonContainer}
+          colors={['#7433FF', '#FFA3FD']}
+          start={{ x: 0, y: 0 }}
+        >
           <Text style={styles.button}>Change payment options</Text>
-        </Pressable>
-      </LinearGradient>
+        </LinearGradient>
+      </TouchableOpacity>
     </View>
   );
 };
